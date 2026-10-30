@@ -1,0 +1,7 @@
+question,expected
+What is our total inventory value?,Inventory
+Which products are running low in stock?,Inventory
+How did revenue change this quarter?,Sales
+What were our top selling products last month?,Sales
+How much did we spend on rent?,Expenses
+How much profit did we make this month?,AMBIGUOUS
