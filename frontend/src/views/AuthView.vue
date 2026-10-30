@@ -45,6 +45,7 @@ import { useRoute, useRouter } from 'vue-router'
 import Logo from '../components/Logo.vue'
 import Icon from '../components/Icon.vue'
 import ThemeToggle from '../components/ThemeToggle.vue'
+import { signInWithEmail, signUpWithEmail } from '../lib/auth'
 
 
 const route = useRoute()
