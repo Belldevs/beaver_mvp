@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: beaver-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - { key: FRONTEND_ORIGIN, sync: false }
+      - { key: SUPABASE_URL, sync: false }
+      - { key: SUPABASE_SERVICE_ROLE_KEY, sync: false }
+      - { key: GEMINI_API_KEY, sync: false }
+      - { key: BACKUP_API_KEY, sync: false }
+      - { key: FREE_QUESTION_LIMIT, value: "25" }
+      - { key: DAILY_USER_CAP, value: "30" }
+      - { key: GLOBAL_DAILY_CAP, value: "800" }
