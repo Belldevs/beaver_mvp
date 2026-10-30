@@ -15,7 +15,6 @@
       <h1 class="h1">{{ isSignup ? 'Create your account' : 'Log in to Beaver' }}</h1>
       <p v-if="isSignup" class="muted">No credit card needed. Your first 25 questions are free.</p>
 
-
       <div class="form">
         <label>Email address
           <input v-model.trim="email" type="email" autocomplete="email" placeholder="you@company.com" />
@@ -47,7 +46,6 @@ import Icon from '../components/Icon.vue'
 import ThemeToggle from '../components/ThemeToggle.vue'
 import { signInWithEmail, signUpWithEmail } from '../lib/auth'
 
-
 const route = useRoute()
 const router = useRouter()
 const isSignup = computed(() => route.meta.mode === 'signup')
@@ -57,8 +55,6 @@ const password = ref('')
 const busy = ref(false)
 const error = ref('')
 const info = ref('')
-
-
 
 async function submit() {
   error.value = ''
@@ -96,9 +92,6 @@ async function submit() {
 .auth-card .h1 { margin: 0; }
 .auth-card p { margin: 0; }
 .wide { width: 100%; }
-.g { font-weight: 800; color: #4285f4; margin-right: 6px; }
-.divider { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 14px; }
-.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 .form { display: flex; flex-direction: column; gap: 14px; }
 label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px; }
 .msg { font-size: 14px; }
